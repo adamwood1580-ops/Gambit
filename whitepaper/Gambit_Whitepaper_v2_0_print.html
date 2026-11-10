@@ -1,0 +1,333 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+@page{size:A4;margin:23mm 19mm 20mm 19mm;@top-left{content:"GAMBIT   /   PROJECT WHITEPAPER";color:#767e8a;font:600 7.4pt 'DejaVu Sans',Arial,sans-serif;letter-spacing:1px;border-bottom:0.7pt solid #dfdfdf;padding-bottom:4mm;}@top-right{content:"v2.0   ·   NOV 2026";color:#767e8a;font:600 7.4pt 'DejaVu Sans',Arial,sans-serif;border-bottom:0.7pt solid #dfdfdf;padding-bottom:4mm;}@bottom-right{content:counter(page);font:600 8pt 'DejaVu Sans';color:#787878;}@bottom-left{content:"NOT A LIVE OFFER  /  DEVELOPMENT CONCEPT";font:600 7.1pt 'DejaVu Sans';color:#a38b69;}}
+@page cover{margin:0;@top-left{content:none;}@top-right{content:none;}@bottom-right{content:none;}@bottom-left{content:none;}}
+@font-face{font-family:'DejaVu Sans';src:url('file:///usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')}@font-face{font-family:'DejaVu Sans';font-weight:700;src:url('file:///usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf')}
+*{box-sizing:border-box}body{font-family:'DejaVu Sans',Arial,sans-serif;color:#20252e;font-size:9.2pt;line-height:1.62;margin:0}
+.cover{page:cover;page-break-after:always;width:210mm;height:297mm;position:relative;overflow:hidden;background:radial-gradient(circle at 74% 42%,#493522 0%,#131922 48%,#0d1119 88%);color:#fff;padding:21mm;}
+.cover-brand{font-size:18pt;letter-spacing:-1px;font-weight:700;color:#fff;display:block}.cover-brand span{color:#efbc78}.cover-rule{height:1px;background:#7c6548;position:absolute;left:21mm;right:21mm;top:41mm;opacity:.8}.cover-corner{position:absolute;right:21mm;top:25mm;font-size:8pt;letter-spacing:2px;color:#bdab91}
+.cover-inner{position:absolute;top:84mm;left:21mm;right:15mm}.cover-kicker{font-size:9pt;letter-spacing:2px;color:#dfb77d;font-weight:700}.cover h1{font-size:64pt;letter-spacing:-6px;line-height:1.03;margin:15mm 0 10mm;color:#fff}.cover h1 em{font-style:normal;color:#eeb871}.cover-sub{font-size:11pt;line-height:1.85;max-width:145mm;color:#bbc0c7}
+.cover-coin{position:absolute;right:-25mm;top:92mm;width:135mm;height:135mm;border-radius:50%;border:14mm solid #c18745;box-shadow:0 0 0 3mm #3d2c21,inset 0 0 0 2mm #e3aa62;background:radial-gradient(circle at 32% 30%,#4a3a2a,#15171e 65%);opacity:.38}
+.cover-coin span{display:block;font-size:160pt;font-weight:700;color:#ffc77e;text-align:center;line-height:115mm;text-shadow:1mm 1mm #000}
+.cover-foot{position:absolute;bottom:28mm;left:21mm;right:21mm;border-top:1px solid #715c46;padding-top:10mm;display:flex;justify-content:space-between;gap:12mm;font-size:9pt;color:#e3c79e}.cover-foot b{color:#fff}.cover-footer-info{position:absolute;bottom:15mm;left:21mm;font-size:7.5pt;color:#9a9ea5}
+.intro{background:#f2f2f0;border-left:4pt solid #c18e4c;padding:5mm 6mm;margin:0 0 9mm;font-size:9pt;line-height:1.6}.intro strong{color:#171b1f}
+h2{font-size:19pt;letter-spacing:-1px;color:#1b222b;margin:11mm 0 4mm;line-height:1.22;break-after:avoid}h3{font-size:12pt;letter-spacing:-.3px;color:#253342;margin:7mm 0 2mm;break-after:avoid}p{margin:0 0 4mm;orphans:3;widows:3}strong{color:#1a1e24}ol,ul{padding-left:6mm;margin:3mm 0 5mm}li{margin-bottom:2.2mm;padding-left:1mm}li p{margin-bottom:1mm}code{background:#f1f2f2;color:#714c18;padding:0 2px;font-size:8pt}table{border-collapse:collapse;width:100%;table-layout:fixed;margin:5mm 0 7mm;font-size:7.75pt;line-height:1.45;break-inside:avoid;}thead th{background:#202935;color:#ffffff;border-bottom:2px solid #bb8750;text-align:left;padding:3mm 2.7mm;font-size:7.45pt;}tbody td{border-bottom:1px solid #d7d9da;padding:2.6mm;vertical-align:top;overflow-wrap:anywhere;}tbody tr:nth-child(2n){background:#f6f5f1}tr{break-inside:avoid}th,td{word-wrap:break-word}blockquote{border-left:3px solid #d6a15d;padding-left:14px;color:#555}hr{height:1px;background:#e4e1db;border:0;margin:10mm 0}.sec-number{color:#b57b33}a{color:#81521f;overflow-wrap:anywhere;text-decoration:none}h2:first-child{margin-top:0}p a{word-wrap:break-word}em{font-style:italic}
+.note{font-size:8.3pt;color:#525d64}
+</style></head><body>
+<div class="cover"><div class="cover-brand">GAMBIT<span>.</span></div><div class="cover-corner">WHITEPAPER / 002</div><div class="cover-rule"></div><div class="cover-coin"><span>G</span></div><div class="cover-inner"><div class="cover-kicker">THE NATIVE TOKEN. THE GAMING PLATFORM. THE INTELLIGENCE.</div><h1>THE TOKEN.<br>THE GAME.<br><em>THE EDGE.</em></h1><div class="cover-sub">A proposed crypto-only casino and event-betting ecosystem built around GAM, founding reward tiers, daily net-profit settlement and responsibly governed AI-assisted market intelligence.</div></div><div class="cover-foot"><div><b>GAM / BNB SMART CHAIN</b><br>100 trillion initial supply</div><div><b>PROJECT CONCEPT</b><br>10 November 2026 · v2.0</div></div><div class="cover-footer-info">No live offering, gambling operation or certified games are represented by this document.</div></div>
+<div class="intro"><strong>READ THIS FIRST.</strong> This is a technical and product concept. GAM presale pricing, casino rewards, Angel Vault games and sports markets are proposals only. The document does not establish licences, audits, profitability or an offer to buy tokens. Gambling and cryptoassets both carry substantial risk.</div>
+<h2><span class="sec-number">1. </span>Executive summary</h2>
+<p>Gambit combines three proposed layers: (i) a fungible BEP-20-compatible GAM token on BNB Smart Chain; (ii) a crypto-only casino and event-betting account platform, with GAM used for eligible wagers; and (iii) a separately controlled rewards and intelligence layer that processes founding tier entitlements, daily GAM net results, market data and statistical analysis.</p>
+<p>The proposed fixed <strong>initial</strong> token supply is 100,000,000,000,000 GAM with 18 decimals and no additional minting function. A 2% tax on qualifying buys through designated V2 liquidity pools would transfer GAM into a community rewards wallet; a 2% tax on qualifying sells through those pools would <strong>burn GAM on-chain</strong>, reducing the reported totalSupply. Ordinary wallet-to-wallet token transfers would remain untaxed. These restrictions do not automatically cover trading through unregistered pools or other venues.</p>
+<p>The working presale allocation is 10 trillion GAM, subdivided from the existing 35% community allocation; the remaining 25 trillion GAM is intended for ongoing community rewards. A proposed presale price of $0.0001 per GAM gives 10 million GAM for a $1,000 contribution, with a <strong>cumulative $1,000 USD-equivalent maximum per wallet</strong> across all transactions. Multiple wallets are not linked or restricted under this technical cap.</p>
+<p>The gaming platform, live presale and any customer-facing crypto promotion are separate launch dependencies, not functions of this informational website.</p>
+<h2><span class="sec-number">2. </span>What GAM is for</h2>
+<p><strong>Gaming unit:</strong> GAM would be accepted for eligible wagers and denominated balances on the planned platform. Users would deposit GAM into a custodial gaming ledger, bet against that ledger, and withdraw subject to verification and applicable rules. Every individual spin or wager does not need an on-chain BSC transaction.</p>
+<p><strong>Founding tier record:</strong> Each presale wallet's cumulative verified USD-equivalent contribution would establish an initial tier. Tiers would not change merely because users later spend, withdraw, or transfer their GAM holdings. Linking a wallet to a player account needs secure ownership proof and duplication controls.</p>
+<p><strong>Proposed profit bonus:</strong> For each eligible gaming incentive programme, a reward engine would calculate an additional GAM bonus on positive net results for a defined UTC day. Casino and sportsbook programmes require separate designs and must not be pooled into a single mixed-product incentive where such mixing is prohibited.</p>
+<p><strong>Community allocation:</strong> Community reward tokens and token buy-tax receipts may be budgeted toward eligible programmes, but no bonus should be issued unless an adequate, ring-fenced GAM reserve funds the obligation.</p>
+<p><strong>No investment return promise:</strong> GAM is not a deposit or claim on gambling revenue. Token ownership alone provides no fixed financial return; the token price can decline to zero.</p>
+<h2><span class="sec-number">3. </span>Confirmed working token parameters</h2>
+<table>
+<thead>
+<tr>
+  <th>Parameter</th>
+  <th>Working design</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Name / symbol</td>
+  <td>Gambit / GAM</td>
+</tr>
+<tr>
+  <td>Network</td>
+  <td>BNB Smart Chain</td>
+</tr>
+<tr>
+  <td>Standard</td>
+  <td>BEP-20-compatible ERC-20</td>
+</tr>
+<tr>
+  <td>Decimals</td>
+  <td>18</td>
+</tr>
+<tr>
+  <td>Initial supply</td>
+  <td>100,000,000,000,000 GAM</td>
+</tr>
+<tr>
+  <td>Future token minting</td>
+  <td>Disabled</td>
+</tr>
+<tr>
+  <td>Buy tax</td>
+  <td>Fixed 2% GAM transfer to community reward wallet on registered V2 pool buys</td>
+</tr>
+<tr>
+  <td>Sell tax</td>
+  <td>Fixed 2% true GAM burn on registered V2 pool sells</td>
+</tr>
+<tr>
+  <td>Ordinary transfers</td>
+  <td>0% tax</td>
+</tr>
+<tr>
+  <td>Token deployment</td>
+  <td>Draft contracts, testnet verification in progress; not audited</td>
+</tr>
+</tbody>
+</table>
+<p>Transfer taxes do not by themselves fund GAM-denominated casino rewards sustainably. Trading fees can lower liquidity and complicate exchange integrations. Fee-on-transfer token support varies between DEX versions and routing methods; the planned v1 token is intended for compatible V2-style pools only. Contract ownership and factory configuration require independent security review.</p>
+<h2><span class="sec-number">4. </span>Allocation model</h2>
+<table>
+<thead>
+<tr>
+  <th>Allocation</th>
+  <th style="text-align:right">% initial supply</th>
+  <th style="text-align:right">GAM tokens</th>
+  <th>Intended use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Community</td>
+  <td style="text-align:right">35%</td>
+  <td style="text-align:right">35 trillion</td>
+  <td>10T presale + 25T continuing community rewards</td>
+</tr>
+<tr>
+  <td>Liquidity</td>
+  <td style="text-align:right">25%</td>
+  <td style="text-align:right">25 trillion</td>
+  <td>Liquidity provisioning and related locks</td>
+</tr>
+<tr>
+  <td>Development &amp; ecosystem</td>
+  <td style="text-align:right">15%</td>
+  <td style="text-align:right">15 trillion</td>
+  <td>Platform infrastructure, security and operations</td>
+</tr>
+<tr>
+  <td>Team</td>
+  <td style="text-align:right">10%</td>
+  <td style="text-align:right">10 trillion</td>
+  <td>Team entitlement subject to vesting</td>
+</tr>
+<tr>
+  <td>Marketing &amp; partnerships</td>
+  <td style="text-align:right">10%</td>
+  <td style="text-align:right">10 trillion</td>
+  <td>Approved marketing, distribution and partnerships</td>
+</tr>
+<tr>
+  <td>Treasury</td>
+  <td style="text-align:right">5%</td>
+  <td style="text-align:right">5 trillion</td>
+  <td>Reserves and contingency funding</td>
+</tr>
+<tr>
+  <td><strong>Total</strong></td>
+  <td style="text-align:right"><strong>100%</strong></td>
+  <td style="text-align:right"><strong>100 trillion</strong></td>
+  <td>No newly minted presale tokens</td>
+</tr>
+</tbody>
+</table>
+<p>The 10T presale supply is not an additional seventh allocation. It sits inside the 35% community allocation. All distribution addresses and contract protections must be verified publicly at actual deployment; at this stage no deployed address is presented as final.</p>
+<h3>Team vesting</h3>
+<p>The working team design is a <strong>12-month cliff followed by 24 equal monthly unlocks</strong>. No team entitlement is withdrawable during the first 12 months. The first release is scheduled for month 13, and all scheduled releases finish at month 36. Each release is approximately 416.67 billion GAM. The specific vault implementation, ownership-transfer permissions, exact vesting timestamps and recovery provisions require audit. A vault holding tokens is not equivalent to locking the exchange liquidity-provider position.</p>
+<h2><span class="sec-number">5. </span>Presale design and economics</h2>
+<table>
+<thead>
+<tr>
+  <th>Presale item</th>
+  <th>Working proposal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Presale inventory</td>
+  <td>10,000,000,000,000 GAM</td>
+</tr>
+<tr>
+  <td>Unit price</td>
+  <td>$0.0001 per GAM</td>
+</tr>
+<tr>
+  <td>At $100 USD</td>
+  <td>1,000,000 GAM</td>
+</tr>
+<tr>
+  <td>At $1,000 USD</td>
+  <td>10,000,000 GAM</td>
+</tr>
+<tr>
+  <td>Wallet maximum</td>
+  <td>Cumulative $1,000 USD-equivalent</td>
+</tr>
+<tr>
+  <td>Identity-based cap</td>
+  <td>None in current contract specification</td>
+</tr>
+<tr>
+  <td>Settlement</td>
+  <td>BNB-based purchase using verified BNB/USD pricing; claim/airdrop after finalisation</td>
+</tr>
+<tr>
+  <td>Sale state</td>
+  <td>Disabled pending deployment verification, legal review and launch sign-off</td>
+</tr>
+</tbody>
+</table>
+<p>At full sale of 10T GAM, gross proceeds would equal <strong>$1 billion</strong> and the price times the total initial GAM supply would equal an <strong>implied $10 billion fully diluted valuation</strong>. These are <strong>arithmetic outcomes, not fundraising forecasts, third-party valuations or assurances of future token market prices</strong>. A presale-capacity model of one million $1,000 wallets does not establish one million unique purchasers or demand. A single person may control multiple wallets.</p>
+<p>Payment conversion requires a reliable and fresh BNB/USD oracle, explicit slippage bounds, a secure record of cumulative contributed value and enforceable inventory constraints. A funded claim/refund lifecycle should be tested against failed transactions, stale oracles, cancellations, rounding and network interruptions. Public GitHub Pages can host an informational front end, not secret keys or privileged casino ledger operations.</p>
+<h2><span class="sec-number">6. </span>Founding reward tiers</h2>
+<p>The following tier percentages are based on the planned verified cumulative contribution of a wallet during the GAM presale, not on the market price of later GAM holdings. A wallet with no contribution would not receive a founding bonus tier.</p>
+<table>
+<thead>
+<tr>
+  <th>Tier</th>
+  <th style="text-align:right">Cumulative presale contribution (USD)</th>
+  <th style="text-align:right">Proposed bonus on positive eligible daily net GAM profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Starter</td>
+  <td style="text-align:right">More than $0, below $50</td>
+  <td style="text-align:right"><strong>5%</strong></td>
+</tr>
+<tr>
+  <td>Bronze</td>
+  <td style="text-align:right">$50 to $99.99</td>
+  <td style="text-align:right"><strong>7%</strong></td>
+</tr>
+<tr>
+  <td>Silver</td>
+  <td style="text-align:right">$100 to $499.99</td>
+  <td style="text-align:right"><strong>20%</strong></td>
+</tr>
+<tr>
+  <td>Gold</td>
+  <td style="text-align:right">$500 to $999.99</td>
+  <td style="text-align:right"><strong>50%</strong></td>
+</tr>
+<tr>
+  <td>Angel</td>
+  <td style="text-align:right">Exactly $1,000 cap</td>
+  <td style="text-align:right"><strong>70%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Threshold precision is expressed in cents for readability; contracts and back-end accounting should use integer units and deterministic rounding. Original presale tier entitlements and any later path for new token holders must be kept as separate eligibility policies. The final terms must specify eligible markets, currency conversion, per-day caps, the funding reserve, exclusions, account integrity, abuse controls, bonus expiration if any, and jurisdictional restrictions.</p>
+<h3>Reward arithmetic</h3>
+<p>For one eligible product programme and UTC accounting day:</p>
+<p><strong>Net GAM profit = sum of settled winning payouts (including returned stakes) − sum of all settled GAM stakes.</strong></p>
+<p><strong>Daily bonus = min[max(0, net GAM profit) × tier rate, published daily bonus cap].</strong></p>
+<p>A player whose positive daily net result is 400 GAM would have a provisional bonus of 20 GAM (Starter), 28 (Bronze), 80 (Silver), 200 (Gold) or 280 (Angel), before any applicable cap. The underlying 400 GAM result is <strong>already included in the player's playing balance</strong>; the rewards ledger credits <strong>only the extra bonus</strong>, not the original result twice.</p>
+<p>An eligible player may request the end of their reward day or be settled at the automatic UTC cutoff. <strong>Only one reward settlement can occur per UTC day, and a player may continue playing without another bonus accruing for that day.</strong> Logging out should not alter earned balances or create an additional reward window. Unsettled bets must be deferred to their actual settlement period under published rules; the system must handle cancelled wagers, reversals, cash-outs and disputes consistently.</p>
+<p>A reward payment should be withdrawable without further wagering as proposed, subject to ordinary account verification and applicable law. A customer must never have to continue gambling to collect a valid accrued balance.</p>
+<h3>Critical bonus sustainability caveat</h3>
+<p><strong>The proposed 70% and 50% bonuses could make games economically loss-making for Gambit.</strong> For illustration, in a single even-money wager with a base theoretical RTP of 98%, a win probability of 49% yields a base RTP of 98%; adding a 70% bonus on winning net profit yields an effective expected payout of <strong>132.3% of stakes</strong> for that isolated wager. Daily aggregation across multiple bets changes the distribution and therefore the cost, but does not make the bonus self-funding. Simulations, separated gaming product budgets, daily limits and transparent contractual ceilings are prerequisites to launch. No such limits have yet been agreed.</p>
+<h2><span class="sec-number">7. </span>Casino and Angel Vault</h2>
+<p>Gambit envisages slots, table games and distinct bonus-game experiences. Real-money games must use validated mathematics and outcome determination; the operator should disclose game rules, prize structures and the applicable return to player (RTP) and should not quietly modify probabilities for a particular user.</p>
+<p><strong>Angel Vault:</strong> A proposed separate experience involving tier-only or otherwise eligible no-additional-wager spins and pre-funded prize pots. A free spin is not automatically a legally free entry when access depends on a prior token purchase. The structure requires independent legal and game-fairness review. Any prize value, frequency, entitlement or maximum payout is to be decided.</p>
+<p>A <strong>98% RTP Angel-specific game configuration</strong> was earlier explored as an optional three-month annual benefit. It is <strong>not a final or guaranteed feature</strong> and should not be stacked with daily profit bonuses until the financial mathematics, certification and lawfulness are proven. RTP is a long-run theoretical statistic, not a player's probability of winning or a guarantee of positive returns.</p>
+<h2><span class="sec-number">8. </span>Sportsbook and event markets</h2>
+<p>Possible categories include conventional sports, golf micro-events (such as whether a player makes an upcoming putt), esports and other externally verifiable events. Political events, including by-elections, may be considered only in places and circumstances where those markets are legal and integrity controls are demonstrably adequate.</p>
+<p>Each market requires an objectively defined outcome, a reliable licensed source of data, an opening and closing event time, fair odds display, safeguards against stale information, pre-set stake/exposure controls, unambiguous dispute rules, and the ability to suspend the market if the feed is delayed or compromised. In-play micro-betting is especially sensitive to data latency, inside information and the order in which bets are accepted.</p>
+<p>Casino and sportsbook bonus programmes need independent product-specific accounting and must not be combined into a single promotional incentive in jurisdictions that prohibit mixed-product rewards. A sportsbook may launch after casino functionality, and not all envisaged market types will necessarily be offered.</p>
+<h2><span class="sec-number">9. </span>Gambit AI: analytical intelligence, not guaranteed picks</h2>
+<p>The proposed intelligence layer has three independent roles:</p>
+<ol>
+<li><strong>Market discovery and summarisation:</strong> Given approved market catalogues and data, an assistant can explain factual context, published terms and relevant statistics. Natural-language suggestions are informational, opt-in and non-coercive.</li>
+<li><strong>Statistical probability modelling:</strong> Calibrated models can combine historical performance, current event context and trusted licensed feeds to estimate an initial fair probability. A fair decimal price is approximately <code>1 / probability</code> before permitted margin and exposure controls. These estimates require back-testing, calibration checks, governance and human-supervised limits.</li>
+<li><strong>User-controlled bet history:</strong> With consent, an account can display previous wagers, price movement, results, favourite categories and risk summaries. Personalisation must not exploit losses, vulnerability, time spent or compulsive behaviour to push further wagering.</li>
+</ol>
+<p>An LLM should <strong>never independently invent sportsbook odds</strong>, manipulate a live game RNG, change accepted bets after the fact, or autonomously create an unreviewed real-money betting market. Odds publication and liability management belong to a deterministic, auditable risk engine; market outcomes require independently verifiable settlement feeds.</p>
+<p>An illustrative putt example: a calibrated 40% probability corresponds to fair decimal odds of 2.50 before bookmaker margin. This is an example of arithmetic, not a real-world prediction or a quote offered by Gambit.</p>
+<h2><span class="sec-number">10. </span>Platform architecture</h2>
+<p><strong>Layer A — BSC smart contracts:</strong> Token transfers and circulating supply, registered liquidity-pool taxation, allocation custody, team vesting, sale contribution accounting, claim/refund mechanics and on-chain wallet funding records.</p>
+<p><strong>Layer B — Custodial gaming ledger:</strong> Authenticated accounts, proof of wallet ownership, GAM deposit confirmations, double-entry transaction accounting, segregated customer-fund records, withdrawals, anti-fraud limits, incident controls and immutable audit trails. The ledger must reconcile all customer liabilities to segregated on-chain reserves.</p>
+<p><strong>Layer C — Game and market engines:</strong> Independently tested casino RNG/game configurations and a sportsbook engine with licensed data sources, market suspension, settlement verification and recorded accepted odds.</p>
+<p><strong>Layer D — Rewards and membership:</strong> Per-wallet presale tier registry, secure account mapping, separated casino/sports net-profit calculations, UTC-day snapshots, one-settlement-per-day rules, separate bonus reserve accounting, auditable credit transactions and appeal handling.</p>
+<p><strong>Layer E — AI and controls:</strong> Data ingestion, calibrated statistical models, model monitoring and logging, optional user-visible explanations, abuse detection, risk management and responsible-play alerts.</p>
+<p>The public GitHub Pages site is only a static informational surface. It is not the casino backend, an on-chain oracle, a payment processor or proof that any described component is deployed.</p>
+<h2><span class="sec-number">11. </span>Security and operational assurance</h2>
+<p>Before any real-value launch, the programme requires independent reviews of smart-contract access controls, vesting, buy/sell tax routing, liquidity registration, presale accounting, BNB oracle quality, refund permissions, edge cases, reentrancy, rate limits, wallet address management, treasury multisig permissions and chain reorganisation handling.</p>
+<p>The casino platform additionally requires tested RNG, secure encryption, secrets management, penetration testing, customer asset reconciliation, proof of solvency/segregation where relevant, account takeover protections, age and identity verification, sanctions/AML processes, fraud and bonus abuse detection, suspicious bet monitoring, disaster recovery and player-dispute processes. A static public site must contain no private keys, recovery phrases or admin credentials.</p>
+<p>The design should publish verifiable token contracts and wallet allocations only after deployed addresses have been checked against the intended chain. Never substitute an unverified address in the presale front end.</p>
+<h2><span class="sec-number">12. </span>Responsible play and transparent marketing</h2>
+<p>Gambling losses are possible on every wager, even for high-tier accounts. No founding membership promises profit or a preferential chance of success. The platform should implement jurisdiction-appropriate age and identity checks, self-exclusion, customer financial/time limits, reality checks, risk interventions and accessible account histories. Bonus credit should not be conditioned on additional gambling, and customer support must be able to correct settlement errors.</p>
+<p>The planned Telegram community should be <strong>opt-in, age-appropriate, and moderated</strong>. It may discuss product progress and explain public documents, but it should not use fabricated scarcity, false audit or licence badges, guaranteed payout claims, pressure to chase losses, misleading “investment” language, or unsupported projections. Avoid targeting minors and people known to be vulnerable to gambling harms. Do not present user-selected “degen” language as a reason to remove safeguards.</p>
+<h2><span class="sec-number">13. </span>Legal and licensing assumptions</h2>
+<p>For product planning, the team may assume that suitable licences and certifications will ultimately be obtained. <strong>No statement in this whitepaper asserts that this has happened.</strong> Crypto financial promotion law may affect the presale and any purchase-linked tier benefit even before casino games launch. In Great Britain, the FCA's financial-promotion framework for qualifying cryptoassets includes restrictions on incentives to invest. Great Britain's gambling regulator licenses remote casino and betting operations and sets technical and marketing rules.</p>
+<p>As of the reference date, the UK Gambling Commission's 19 January 2026 update bars incentives that combine different gambling product types, including casino and betting, within one promotion. Separate, lawful bonus rules and budgets may be needed; the exact proposed structure requires qualified legal analysis. Other jurisdictions may ban particular games or event outcomes altogether. This whitepaper is not legal advice.</p>
+<h2><span class="sec-number">14. </span>Roadmap and status</h2>
+<table>
+<thead>
+<tr>
+  <th>Phase</th>
+  <th>Objective</th>
+  <th>Status at publication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>GAM contract, allocations, tax and vesting tests</td>
+  <td>Draft/testnet development</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Presale contract, wallet cap, oracles and claim/refund lifecycle</td>
+  <td>Draft, disabled</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Secure GAM gaming ledger and approved daily bonus calculation</td>
+  <td>Proposed</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Tested casino game integrations and standalone bonus concepts</td>
+  <td>Planned</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Sportsbook feeds, odds risk engine and market settlement</td>
+  <td>Research</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Optional bet-history assistant and mature AI price models</td>
+  <td>Research</td>
+</tr>
+</tbody>
+</table>
+<p>Dates, launches, exchange listings and revenue projections are <strong>not committed</strong>. Technical completion must be distinguished from security review, marketing approval and live operating authorisation.</p>
+<h2><span class="sec-number">15. </span>Risk factors and what is not yet decided</h2>
+<ul>
+<li><strong>Token and market risk:</strong> GAM may be illiquid or lose all its value. There is no promise of an exchange listing, token appreciation or buyer liquidity.</li>
+<li><strong>Economic risk:</strong> The proposed 50% and 70% daily profit bonuses can exceed sustainable expected margins and require re-design, caps and funded reserves.</li>
+<li><strong>Technical risk:</strong> Vulnerabilities in wallets, presale, game ledger, cross-system reconciliation, live data feeds and settlement can create losses.</li>
+<li><strong>Operational and counterparty risk:</strong> A custodial gaming wallet creates duties to safeguard assets and handle withdrawals even during service interruptions.</li>
+<li><strong>Regulatory risk:</strong> Presale marketing, token incentives, casino games, sports betting, election markets, bonus games and crypto payments may face different restrictions depending on jurisdiction.</li>
+<li><strong>Price/feed risk:</strong> BNB/USD oracles, delayed sportsbook data and market volatility can make prices inaccurate or cause pauses.</li>
+<li><strong>Concentration risk:</strong> Multiple wallets can be controlled by a single buyer and a small number of accounts may dominate liquidity or redemptions.</li>
+<li><strong>Unresolved design:</strong> Bonus maximums; product eligibility; future post-presale tiers; reward budget; gamer account model; live game suppliers; precise launch timing; supported markets; governance and treasury disclosures.</li>
+</ul>
+<h2><span class="sec-number">16. </span>Reference framework</h2>
+<p>The following official material informed the draft's discussion of controls; readers should verify current requirements before any launch:</p>
+<ol>
+<li>UK Financial Conduct Authority, <em>Cryptoasset financial promotions and fiat-to-crypto on/off ramp services</em>, updated February 2026: <a href="https://www.fca.org.uk/firms/cryptoasset-financial-promotions-and-fiat-crypto-ramp-services">https://www.fca.org.uk/firms/cryptoasset-financial-promotions-and-fiat-crypto-ramp-services</a></li>
+<li>FCA, <em>PS23/6 Financial promotion rules for cryptoassets</em>: <a href="https://www.fca.org.uk/publications/policy-statements/ps23-6-financial-promotion-rules-cryptoassets">https://www.fca.org.uk/publications/policy-statements/ps23-6-financial-promotion-rules-cryptoassets</a></li>
+<li>UK Gambling Commission, <em>Remote gambling and software technical standards</em>: <a href="https://www.gamblingcommission.gov.uk/licensees-and-businesses/guide/remote-gambling-and-software-technical-standards">https://www.gamblingcommission.gov.uk/licensees-and-businesses/guide/remote-gambling-and-software-technical-standards</a></li>
+<li>UK Gambling Commission, <em>Socially responsible incentives: what operators need to know</em>, December 2025: <a href="https://www.gamblingcommission.gov.uk/blog/post/socially-responsible-incentives-what-operators-need-to-know">https://www.gamblingcommission.gov.uk/blog/post/socially-responsible-incentives-what-operators-need-to-know</a></li>
+<li>UK Gambling Commission, <em>Licence condition 5.1.6 - Compliance with advertising codes</em>: <a href="https://www.gamblingcommission.gov.uk/licensees-and-businesses/lccp/condition/5-1-6-compliance-with-advertising-codes">https://www.gamblingcommission.gov.uk/licensees-and-businesses/lccp/condition/5-1-6-compliance-with-advertising-codes</a></li>
+<li>UK Gambling Commission, <em>Apply for a licence to operate a gambling business</em>: <a href="https://www.gamblingcommission.gov.uk/service/apply-for-an-operating-licence">https://www.gamblingcommission.gov.uk/service/apply-for-an-operating-licence</a></li>
+</ol>
+<hr />
+<p><strong>GAMBIT — THE TOKEN. THE GAME. THE EDGE.</strong><br />
+<strong>Whitepaper v2.0 / 10 November 2026 / Project concept / Not an invitation to invest or gamble.</strong></p>
+</body></html>
