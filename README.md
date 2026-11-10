@@ -1,72 +1,62 @@
-# GAMBIT — Showcase Website v2.0
+# GAMBIT — Official website source v2.2
 
-A fully static, mobile-first GAMBIT project showcase for **GitHub Pages**. It explains the proposed GAM tokenomics, five founding tiers (5% / 7% / 20% / 50% / 70%), a daily net-profit bonus model, proposed crypto casino, Angel Vault, sportsbook/event markets, Gambit AI and a staged roadmap.
+**The Token. The Game. The Edge.** A polished, static GitHub Pages site for the Gambit (GAM) token and gaming ecosystem.
 
-**Development/preview only.** Nothing here opens a sale, accepts a wallet signature, collects money or accepts gambling bets. All features described as planned have not been verified as deployed. The PDF whitepaper is included and linked from the site.
+## Publish on GitHub Pages
 
-## What's included
+1. Extract this ZIP. Upload the **contents** (not an enclosing folder) to your GitHub repository root. `index.html`, `assets/`, and `whitepaper/` must all be at the repository root.
+2. In GitHub, open **Settings → Pages**. Select **Deploy from a branch** → `main` → `/(root)`, then save.
+3. The site works on your repository's `github.io` URL. A custom domain can be added later in GitHub Pages settings. If setting a custom domain, also create the DNS records recommended by GitHub.
+4. Share the *published* URL only after checking it for your intended jurisdiction's crypto promotions, gambling marketing and age-access requirements.
 
-- `index.html` — complete single-page project showcase (no framework, no build process)
-- `assets/css/styles.css` — full responsive styles
-- `assets/js/config.js` — editable launch date, presale planning price, optional socials
-- `assets/js/site.js` — tier and GAM profit-bonus simulator, optional countdown and mobile menu
-- `assets/img/` — brand mark, favicon and Telegram/X social share preview image
-- `whitepaper/Gambit_Whitepaper_v2_0.pdf` — 11-page illustrated whitepaper
-- `whitepaper/Gambit_Whitepaper_v2_0.md` — editable whitepaper source
-- `docs/previews/` — desktop and mobile full-page image captures
-- `docs/TELEGRAM_MEDIA_KIT.md` — draft community messaging and sharing guidance
-- `docs/LAUNCH_CHECKLIST.md` — practical release controls
-- `.nojekyll`, `robots.txt`, `tests/` — GitHub Pages compatibility and checks
+## Confirmed product and numeric specification
 
-## Deploy to GitHub Pages
+- Gambit (GAM), BNB Smart Chain, 18 decimals, 100 trillion GAM initial supply and no additional minting.
+- 35% community (10T presale, 25T rewards), 25% liquidity, 15% development, 10% team, 10% marketing, 5% treasury.
+- Fixed 2% recognised-V2-pool buy tax paid in GAM to the community reward wallet; 2% recognised-V2-pool sell tax permanently burned from total supply. Ordinary wallet-to-wallet GAM transfers: no trading tax.
+- Presale: 10 trillion GAM at **$0.0001 per GAM**, with a **cumulative $1,000 per-wallet cap**. At the maximum contribution, the wallet is entitled to 10 million GAM. This is a wallet, not person-level, limit.
+- Founding casino reward tiers: Starter < $50 = 5% (positive contributions only); Bronze $50–<$100 = 7%; Silver $100–<$500 = 20%; Gold $500–<$1,000 = 50%; Angel $1,000 = 70%.
+- Rewards: tier rate × positive daily GAM **net casino profit**, once per UTC day. Zero or negative net results produce no bonus. Player can close their reward day once; subsequent play that UTC day earns no additional bonus. Regular winnings are already in the gaming balance; the tier bonus is an *additional* credit. Sportsbook and event market rewards are not combined with casino bonuses.
+- Angel Vault: a distinct exclusive bonus-game concept with separately published rules, independent randomness and a funded prize pot. 98% RTP is **not** part of the tier formula.
 
-1. Create a GitHub repository (e.g. `gambit-showcase`) or choose the existing GAMBIT Pages repo. If replacing the existing `index.html`, the old presale landing page will no longer be the homepage. Keep a backup if you want to preserve it.
-2. Unzip and upload **the contents of this directory** to the repository root. Make sure `index.html` is at the root—not inside an extra subfolder.
-3. In GitHub open **Settings → Pages → Build and deployment**, choose **Deploy from a branch**, then **main / (root)**, and save.
-4. GitHub will provide an HTTPS Pages URL. A custom domain can be configured in the Pages settings later.
-5. Before publication outside a technical preview, complete the launch checklist and independent marketing/regulatory review. GitHub Pages is public even with `robots.txt` disallow rules.
+## Wallet integration: only the presale contract address needs supplying
 
-## Edit launch data
+The wallet desk is already included. It's intentionally transaction-locked in the provided package; the rest of the website is complete as static content.
 
-Open `assets/js/config.js`:
+In `assets/js/config.js`, once the presale is correctly deployed and the contract has been audited/verified for your intended chain:
 
-```js
-launchAt: null, // replace with e.g. '2027-02-01T18:00:00Z' (ISO8601 with timezone)
-presaleUsdPrice: 0.0001, // the *provisional* presale rate
-telegramUrl: '', // insert the official HTTPS Telegram channel URL once created
-xUrl: '', // optional; no X button yet
-```
+1. Set `chainId` to the correct network (`56` for production BSC (the site default), or `97` for testnet verification).
+2. Set `presaleAddress` to the verified GambitPresale contract address supplied by you.
+3. `contractAddress` can stay blank. The website reads the GAM token address from the presale contract's on-chain `gam()` getter and validates the token symbol and decimal count. If you prefer, also explicitly supply `contractAddress`; it is then checked against the presale token.
+4. Only **after** testing, funding, on-chain verification and relevant approvals, set both `previewOnly: false` and `liveTransactionsEnabled: true`. The two separate switches guard against accidental transaction activation.
+5. The code also compares the actual presale contract's dollar price (`$0.0001`), wallet cap (`$1,000`), BNB/USD oracle quotes, on-chain sale status and purchase amounts; it doesn't trust browser-only calculations for wallet payments.
+6. BNB purchases and GAM claims run against the presale contract. GAM transfers use ERC-20 `transfer`. PancakeSwap links are available only once a mainnet GAM token is verified. Real on-chain transactions require explicit confirmation in the connected wallet.
 
-- Countdown displays **TBA** while `launchAt` is `null`. The timer doesn't enable purchases.
-- The demo simulator recalculates at `presaleUsdPrice`. If you change the planning price, update the whitepaper and token contract planning separately; the smart-contract price is the ultimate source for any live sale.
-- No wallet address, RPC, contract ID or live buy endpoint is configured here. Do not add any real payment instructions or transaction capability without independent audit and approval.
-- Add your Telegram URL only once you control the official channel. It reveals an actual community link instead of a placeholder.
-- For social previews, update `<meta property="og:image">` in `index.html` to the **full absolute HTTPS URL** for `assets/img/social-preview.png` once your site domain is known; preview bots often ignore relative image URLs.
-- `robots.txt` is set to `Disallow: /` for a technical preview. This is not access control and must not be relied on for privacy. Adjust it only when the public marketing release has been cleared.
+**Do not insert secret keys, private keys, wallet seeds, RPC API secrets or recovery phrases into GitHub Pages files.**
 
-## Tier boundaries
+The presale sale price displayed on the brochure is an approved *product-design number*, not a live market price or confirmed investment valuation. The $10 billion implied valuation and $1 billion maximum sale capacity are mathematical quantities, not funding forecasts. Wallet connection alone does not move funds.
 
-| Verified USD-equivalent presale contribution to a wallet | Founding tier | Proposed bonus rate |
-|---|---|---:|
-| $0 (no purchase) | No founding tier | 0% |
-| $0.01–$49.99 | Starter | 5% |
-| $50.00–$99.99 | Bronze | **7%** |
-| $100.00–$499.99 | Silver | 20% |
-| $500.00–$999.99 | Gold | 50% |
-| Exactly $1,000 (per-wallet cap) | Angel | 70% |
+## Optional additions (not required to publish)
 
-Bonus is proposed only on **positive eligible daily net GAM profit** and would be subject to disclosed product rules, caps and funding. This is an illustration, not a guarantee of profits. Casino and sports programmes cannot be combined into a single mixed-product incentive in Great Britain under the January 2026 rule changes.
+- `launchAt`: set a UTC ISO timestamp (for example `2027-03-01T18:00:00Z`) to automatically show the launch countdown. If unset, the countdown stays hidden so no fabricated launch date is displayed.
+- `telegramUrl`: put your official `https://t.me/...` URL here. If unset, no empty or broken community link is shown.
+- `xUrl`: reserved for your X account.
+- For Telegram/X sharing, update `og:image` to a fully qualified URL when your final domain is known; preview image is at `assets/img/social-preview.png`.
 
-## Verify locally
+## Files
 
-- Run `node tests/site.test.js` for source and tier fixture checks.
-- Open `index.html` in a modern desktop or mobile browser. External Google Fonts are optional; system-font fallbacks work without the internet.
-- Test the two simulator fields, tier thresholds, countdown, accordion, mobile menu and whitepaper PDF links.
+- `index.html` — finished landing page with token utility, five founding tiers, calculator, tokenomics, gaming, AI, FAQs, and wallet desk.
+- `assets/css/` — responsive site design.
+- `assets/js/config.js` — public configuration.
+- `assets/js/site.js` — calculator, menu and countdown.
+- `assets/js/exchange.js` — wallet connection, on-chain quote/claim, swap link and GAM transfer logic, disabled by default.
+- `whitepaper/Gambit_Whitepaper_v2_2.pdf` — updated nine-page whitepaper.
+- `whitepaper/Gambit_Whitepaper_v2_2.md` — editable whitepaper source.
+- `docs/previews/` — desktop and mobile screenshots.
+- `tests/` — static and wallet safety checks.
 
-The source was visually checked at desktop 1440px and mobile 390px, and its JavaScript logic was tested. This does not constitute a security, accessibility, legal or production infrastructure audit.
+## Release and communications boundaries
 
-## Crucial publication safeguards
+This is a production-quality **static marketing site**, not evidence of operational gambling infrastructure. No licences, audited contracts, certified games, contract deployments or liquidity are independently verified by these files. Purchasing, withdrawals and wagering are not live. Confirm the crypto financial-promotion rules and local gambling advertising restrictions before making the site publicly accessible as a sale invitation. Avoid claiming assured returns, a functioning casino or regulatory approval without evidence.
 
-Advertising a $1,000 crypto presale contribution as a route to enhanced gambling bonuses may count as a **prohibited cryptoasset incentive** in the UK. The promotional content itself may be regulated even when the casino, wager functions and wallet purchase functions are disabled. This package **must not be used as a public marketing campaign directed at UK consumers until qualified legal counsel and the appropriate promotions approval route clear the specific wording and distribution channels**. Gambling licensing and game certification are not established by this package.
-
-Do not put private keys, wallet seed phrases, customer data, admin tokens or API secrets into GitHub Pages source. If eventually handling live wallet purchase data, use independently audited on-chain contracts and trusted external systems with access controls, not a static HTML-only implementation.
+This matters in the UK in particular: FCA rules restrict investment incentives linked to crypto purchases, and UKGC rules prohibit combining casino and betting products within a single gambling incentive. These limitations must be addressed before public presale promotion or operation even if the code is ready.
